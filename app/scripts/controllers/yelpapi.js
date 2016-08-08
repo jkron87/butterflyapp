@@ -8,10 +8,10 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('YelpapiCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', function($scope, MyYelpAPI) {
+      $scope.businesses = [];
+      MyYelpAPI.retrieveYelp('', function(data) {
+          $scope.businesses = data.businesses;
+          console.log(data);
+      });
+  }]);
