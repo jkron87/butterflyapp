@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -30,11 +31,6 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/view1', {
-        templateUrl: 'views/clueview1.html',
-        controller: 'clueview1Ctrl',
-        controllerAs: 'clueview1'
-      })
       .when('/clueview2', {
         templateUrl: 'views/clueview2.html',
         controller: 'Clueview2Ctrl',
@@ -49,11 +45,6 @@ angular
         templateUrl: 'views/clueview1.html',
         controller: 'Clueview1Ctrl',
         controllerAs: 'clueview1'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
       })
       .when('/winningview', {
         templateUrl: 'views/winningview.html',
