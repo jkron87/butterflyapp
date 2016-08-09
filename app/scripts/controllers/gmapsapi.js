@@ -8,10 +8,13 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('GmapsapiCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('geolocCtrl', function($scope){
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position){
+          $scope.$apply(function(){
+            $scope.position = position;
+            console.log($scope.position);
+          });
+        });
+      }
+    })
