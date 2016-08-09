@@ -43,6 +43,21 @@
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
               <li><a ng-href="#/clueview1">Clue 1</a></li>
+
+              <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                </fb:login-button>
+
+                <div id="status">
+                </div></li>
+
+                <li><div
+                        class="fb-like"
+                        data-share="true"
+                        data-width="450"
+                        data-show-faces="true">
+                      </div></li>
+
+
             </ul>
           </div>
         </div>
@@ -88,6 +103,7 @@
         <script src="scripts/controllers/gmapsapi.js"></script>
         <script src="scripts/services/yelpapifactory.js"></script>
         <script src="scripts/services/gmapsapifactory.js"></script>
+        <script src="scripts/services/facebookapifactory.js"></script>
         <!-- endbuild -->
 </body>
 </html>
