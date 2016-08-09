@@ -18,7 +18,7 @@ angular.module('butterflyappApp')
         }
         return result;
       };
-
+    
       var retrieveYelp = function (name, callback) {
         var method = 	'GET';
         var url = 		'http://api.yelp.com/v2/search';

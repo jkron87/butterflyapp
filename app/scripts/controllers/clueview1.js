@@ -8,10 +8,7 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('Clueview1Ctrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('Clueview1Ctrl', function ($scope) {
+
+
   });
