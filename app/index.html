@@ -43,19 +43,19 @@
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
               <li><a ng-href="#/clueview1">Clue 1</a></li>
+          <google-map center="map.center" zoom="map.zoom"></google-map>
 
-              <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
+           <!--   Facebook Login -->
 
-                <div id="status">
-                </div></li>
+                <li><fb:login-button autologoutlink="true"></fb:login-button></li>
 
-                <li><div
-                        class="fb-like"
-                        data-share="true"
-                        data-width="450"
-                        data-show-faces="true">
-                      </div></li>
+
+              <!--   Facebook Share -->
+
+                <li><div class="fb-share-button"
+                    data-href="http://www.facebook.com"
+                    data-layout="button_count">
+                    </div></li>
 
 
             </ul>
@@ -65,7 +65,16 @@
     </div>
 
     <div class="container">
+
+      <div ng-controller="geolocCtrl">
+          <div id="map"></div>
+
+      </div>
     <div ng-view=""></div>
+    </div>
+
+    <div ng-controller="showMap">
+      <google-map center="map.center" zoom="map.zoom"></google-map>
     </div>
 
     <div class="footer">
@@ -73,6 +82,7 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
+
 
 
 
@@ -96,13 +106,15 @@
     <script src="bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
     <script src="bower_components/js-rich-marker/src/richmarker.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/ngGeolocation/ngGeolocation.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- script for map -->
-    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="//maps.googleapis.com/maps/api/js"></script>
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
@@ -115,6 +127,9 @@
         <script src="scripts/services/yelpapifactory.js"></script>
         <script src="scripts/services/gmapsapifactory.js"></script>
         <script src="scripts/services/facebookapifactory.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL-UYGEWzRM60XecXsh6rUKn4wDOYKIWE&callback=initMap"></script>
+
         <!-- endbuild -->
 </body>
 </html>
