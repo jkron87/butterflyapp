@@ -65,6 +65,9 @@
     </div>
 
     <div class="container">
+      <div ng-controller="geolocCtrl">
+          <div id="map"></div>
+      </div>
     <div ng-view=""></div>
     </div>
 
@@ -73,8 +76,7 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
-    <div ng-controller="geolocCtrl">
-    </div>
+
 
 
 
@@ -95,8 +97,7 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL-UYGEWzRM60XecXsh6rUKn4wDOYKIWE&callback=initMap"
-    async defer></script>
+
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
@@ -109,6 +110,9 @@
         <script src="scripts/services/yelpapifactory.js"></script>
         <script src="scripts/services/gmapsapifactory.js"></script>
         <script src="scripts/services/facebookapifactory.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL-UYGEWzRM60XecXsh6rUKn4wDOYKIWE&callback=initMap"></script>
+
         <!-- endbuild -->
 </body>
 </html>

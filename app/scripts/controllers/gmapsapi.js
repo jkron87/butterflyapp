@@ -8,13 +8,14 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('geolocCtrl', function($scope){
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position){
-          $scope.$apply(function(){
-            $scope.position = position;
-            console.log($scope.position);
-          });
-        });
-      }
-    })
+  .controller('geolocCtrl', ['$scope', 'GeolocationService', function ($scope, geolocation) {
+    $scope.position = null;
+    $scope.message = "Determining gelocation...";
+
+    geolocation().then(function (position) {
+        $scope.position = position;
+        console.log($scope.position);
+    }, function (reason) {
+        $scope.message = "Could not be determined."
+    });
+}]);
