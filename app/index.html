@@ -44,18 +44,17 @@
               <li><a ng-href="#/">Contact</a></li>
               <li><a ng-href="#/clueview1">Clue 1</a></li>
 
-              <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
+           <!--   Facebook Login -->
 
-                <div id="status">
-                </div></li>
+                <li><fb:login-button autologoutlink="true"></fb:login-button></li>
 
-                <li><div
-                        class="fb-like"
-                        data-share="true"
-                        data-width="450"
-                        data-show-faces="true">
-                      </div></li>
+               
+              <!--   Facebook Share -->
+
+                <li><div class="fb-share-button" 
+                    data-href="http://www.facebook.com" 
+                    data-layout="button_count">
+                    </div></li>
 
 
             </ul>
