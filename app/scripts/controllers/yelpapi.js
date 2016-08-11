@@ -20,6 +20,11 @@ angular.module('butterflyappApp')
           $scope.name = $scope.businesses[$scope.randomNumber].name.toLowerCase();
           var regex = new RegExp($scope.name);
           $scope.snippetReplaced = $scope.snippet.replace(regex, "__________");
+        // steve added latitude and longitude below
+          $scope.latitude =
+          $scope.businesses[$scope.randomNumber].location.coordinate.latitude;
+          $scope.longitude =
+          $scope.businesses[$scope.randomNumber].location.coordinate.longitude;
           $scope.imgurl = $scope.businesses[$scope.randomNumber].image_url;
           $scope.street = $scope.businesses[$scope.randomNumber].location.address[0].match(/\D+/).join('');
           //creates method to scramble letters
@@ -37,6 +42,8 @@ angular.module('butterflyappApp')
         };
 
           $scope.shuffledName = $scope.businesses[$scope.randomNumber].name.split('').shuffle().join('');
+
+
 
           console.log(data);
 
