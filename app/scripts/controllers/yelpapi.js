@@ -8,7 +8,7 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', function($scope, MyYelpAPI) {
+.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', function($scope, MyYelpAPI, googlemapsservice) {
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
 
@@ -21,10 +21,12 @@ angular.module('butterflyappApp')
           var regex = new RegExp($scope.name);
           $scope.snippetReplaced = $scope.snippet.replace(regex, "__________");
         // steve added latitude and longitude below
-          $scope.latitude =
-          $scope.businesses[$scope.randomNumber].location.coordinate.latitude;
-          $scope.longitude =
-          $scope.businesses[$scope.randomNumber].location.coordinate.longitude;
+          var latitude =
+          Number($scope.businesses[$scope.randomNumber].location.coordinate.latitude);
+
+          var longitude =
+          Number($scope.businesses[$scope.randomNumber].location.coordinate.longitude);
+
           $scope.imgurl = $scope.businesses[$scope.randomNumber].image_url;
           $scope.street = $scope.businesses[$scope.randomNumber].location.address[0].match(/\D+/).join('');
           //creates method to scramble letters
@@ -47,6 +49,9 @@ angular.module('butterflyappApp')
 
           console.log(data);
 
+          MyYelpAPI.increaseN();
+
+          googlemapsservice.initMap(latitude, longitude);
 
       });
 
