@@ -1,1 +1,20 @@
 <p>This is the clueview2 view.</p>
+
+<div  ng-controller="YelpapiCtrl">
+      <p ng-show="count===1">
+      {{category}}
+      </p>
+      <p ng-show="count===2">
+        {{snippetReplaced}}
+      <p ng-show="count===3"><img ng-src="{{imgurl}}">
+      </p>
+      <p ng-show="count===4">{{street}}
+      </p>
+      <p ng-show="count===5">
+      {{shuffledName}}
+    </p>
+
+
+
+      <button ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
+  </div>
