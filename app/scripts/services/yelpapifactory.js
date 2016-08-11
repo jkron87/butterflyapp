@@ -18,19 +18,21 @@ angular.module('butterflyappApp')
         }
         return result;
       };
-    
+      var n = 0;
+      var increaseN = function(){
+        n++;
+      };
       var retrieveYelp = function (name, callback) {
         var method = 	'GET';
         var url = 		'http://api.yelp.com/v2/search';
         var params = {
-          callback: 								'angular.callbacks._0',
-          location: 								'48104',
+          callback: 								'angular.callbacks._' + n,
+          location: 								'Detroit',
           oauth_consumer_key: 			'XAj6qaNihVvooG8uB0Mg_g', // consumer key
           oauth_token: 							'6zEfT7oyziwzAYCs8mPskGUnCjEI4-Fp', //Token
           oauth_signature_method: 	'HMAC-SHA1',
           oauth_timestamp: 					new Date().getTime(),
           oauth_nonce: 							randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-          category_filter: 					'bowling',
           sort:                      2,
         }; // end params
         var consumerSecret = 				'6JyakyLKMF-cwZrJi3z4JrbACpY'; //Consumer Secret
@@ -51,7 +53,8 @@ angular.module('butterflyappApp')
       }; // end retrieveYelp
 
       return {
-        retrieveYelp: retrieveYelp
+        retrieveYelp: retrieveYelp,
+        increaseN : increaseN
       };
 
     } // end function

@@ -18,7 +18,6 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngGeolocation',
   ])
   .config(function ($routeProvider) {
     $routeProvider
