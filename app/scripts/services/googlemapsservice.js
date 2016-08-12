@@ -35,6 +35,20 @@ angular.module('butterflyappApp')
         radius: 1000
       });
 
+      var createMarker = function (){
+      var myLatLng = {lat: 42.3297, lng: -83.0462};
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+      })
+      
+    }
+    createMarker();
+  }
+
+
+
+
     }
 
     return {initMap : initMap,
