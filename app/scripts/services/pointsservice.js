@@ -1,17 +1,8 @@
-'use strict';
-
-/**
- * @ngdoc function
- * @name butterflyappApp.controller:Clueview1Ctrl
- * @description
- * # Clueview1Ctrl
- * Controller of the butterflyappApp
- */
 angular.module('butterflyappApp')
-  .controller('Clueview1Ctrl', function ($scope) {
-  	var oButton = document.getElementById("hint1");
+.factory("pointsService", function () {
+	var oButton = document.getElementById("hint1");
     var oText = document.getElementById("points1");
-    var count1 = 100;
+    var count = 100;
     oButton.addEventListener('click', function() {
 
 
@@ -24,3 +15,4 @@ angular.module('butterflyappApp')
 
 
   });
+};

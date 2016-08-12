@@ -49,7 +49,7 @@ angular.module('butterflyappApp')
 
 
 
-    }
+    
 
     return {initMap : initMap,
           };
