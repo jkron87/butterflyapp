@@ -1,6 +1,6 @@
 <p>This is the clueview3 view.</p>
 
-<div ng-controller="Clueview2Ctrl">
+<div ng-controller="Clueview3Ctrl">
   <div id ="map"></div>
   </div>
   <div  ng-controller="YelpapiCtrl">
@@ -19,10 +19,10 @@
     {{shuffledName}}
   </p>
 
-  <p>POINTS:</p>
-  <div class="clue" id="points">100</div>
 
-
-      <button id= "hint" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
-      <a class="btn btn-lg btn-success" ng-href="#/winningview">Skip<span class="glyphicon glyphicon-ok"></span></a>
+    <p>POINTS:</p>
+    <div id="points3">100</div>
+      <button id= "hint3" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
+      <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check my location<span class="glyphicon glyphicon-ok"></span></a>
+      <a id= "skip" class="btn btn-lg btn-success" ng-href="#/winningview">Skip<span class="glyphicon glyphicon-ok"></span></a>
   </div>

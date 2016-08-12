@@ -62,7 +62,7 @@ angular.module('butterflyappApp')
             $scope.testStuff = CheckGeo.test();
             console.log($scope.testStuff);
 
-            if($scope.testStuff.newLatToCheck === $scope.testStuff.newLatChecker) {
+            if($scope.testStuff.newLatToCheck === $scope.testStuff.newLatChecker && $scope.testStuff.newLongToCheck === $scope.testStuff.newLongChecker) {
               console.log('you win');
             } else {
               console.log('you suck');
