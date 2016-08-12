@@ -34,6 +34,7 @@ angular.module('butterflyappApp')
           oauth_timestamp: 					new Date().getTime(),
           oauth_nonce: 							randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
           sort:                      2,
+          radius_filter:             1200
         }; // end params
         var consumerSecret = 				'6JyakyLKMF-cwZrJi3z4JrbACpY'; //Consumer Secret
         var tokenSecret = 					'Ipr_APAvZlMKR_VEMMDJPUk5hgk'; //Token Secret

@@ -43,7 +43,7 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
-              
+
               <!--   Facebook Login -->
 
 
@@ -66,6 +66,9 @@
 
     <div class="container">
     <div ng-view=""></div>
+    <div ng-controller="geolocCtrl">
+
+      </div>
     </div>
 
     <div class="footer">
@@ -107,6 +110,7 @@
         <script src="scripts/controllers/yelpapi.js"></script>
         <script src="scripts/controllers/gmapsapi.js"></script>
         <script src="scripts/services/yelpapifactory.js"></script>
+        <script src="scripts/services/checkgeo.js"></script>
         <script src="scripts/services/gmapsapifactory.js"></script>
         <script src="scripts/services/facebookapifactory.js"></script>
         <script src="scripts/directives/directives.js"></script>
