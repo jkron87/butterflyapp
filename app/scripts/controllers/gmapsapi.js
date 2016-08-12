@@ -8,13 +8,18 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('geolocCtrl', ['$scope', 'GeolocationService', function ($scope, geolocation) {
+  .controller('geolocCtrl', ['$scope', 'GeolocationService', 'CheckGeo', function ($scope, geolocation, CheckGeo) {
     $scope.position = null;
-    $scope.message = "Determining gelocation...";
+      $scope.message = "Determining gelocation...";
 
     geolocation().then(function (position) {
         $scope.position = position;
-        console.log($scope.position);
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var latToCheck = latitude.toFixed(3);
+        var longToCheck = longitude.toFixed(3);
+        CheckGeo.checkerGmap(latToCheck, longToCheck);
+
     }, function (reason) {
         $scope.message = "Could not be determined."
     });

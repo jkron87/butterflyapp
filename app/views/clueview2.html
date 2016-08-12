@@ -4,24 +4,23 @@
   <div id ="map"></div>
 </div>
 <div  ng-controller="YelpapiCtrl">
-      <p ng-show="count===1">
-      {{category}}
+  <p class="clue" ng-show="count===1">
+  {{category}}
 
-      </p>
-      <p ng-show="count===2">
-      {{snippetReplaced}}
-      <p ng-show="count===3"><img ng-src="{{imgurl}}">
-      </p>
-      <p ng-show="count===4">
-        {{street}}
-      </p>
-      <p ng-show="count===5">
-      {{shuffledName}}
-    </p>
+  </p>
+  <p class= "clue" ng-show="count===2">
+  {{snippetReplaced}}
+  <p class="clue"ng-show="count===3"><img ng-src="{{imgurl}}">
+  </p>
+  <p class="clue" ng-show="count===4">
+    {{street}}
+  </p>
+  <p class="clue" ng-show="count===5">
+  {{shuffledName}}
+  </p>
 
-    <p>POINTS:</p>
-    <div id="points">100</div>
-
+  <p>POINTS:</p>
+  <div class="clue" id="points">100</div>
 
 
       <button id= "hint" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>

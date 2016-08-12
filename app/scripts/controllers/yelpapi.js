@@ -8,7 +8,7 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', function($scope, MyYelpAPI, googlemapsservice) {
+.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', 'CheckGeo', function($scope, MyYelpAPI, googlemapsservice, CheckGeo) {
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
 
@@ -50,8 +50,32 @@ angular.module('butterflyappApp')
           console.log(data);
 
           MyYelpAPI.increaseN();
-
           googlemapsservice.initMap(latitude, longitude);
+
+
+          var latChecker = latitude.toFixed(3);
+          var longChecker = longitude.toFixed(3);
+
+        $scope.checkGeoClick = function () {
+            CheckGeo.checkerYelp(latChecker, longChecker);
+            console.log('button has been click');
+            $scope.testStuff = CheckGeo.test();
+            console.log($scope.testStuff);
+
+            if($scope.testStuff.newLatToCheck === $scope.testStuff.newLatChecker) {
+              console.log('you win');
+            } else {
+              console.log('you suck');
+            }
+          };
+
+
+
+
+
+
+
+
 
       });
 
