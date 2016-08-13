@@ -45,10 +45,6 @@ angular.module('butterflyappApp')
 
           $scope.shuffledName = $scope.businesses[$scope.randomNumber].name.split('').shuffle().join('');
 
-
-
-          console.log(data);
-
           MyYelpAPI.increaseN();
           googlemapsservice.initMap(latitude, longitude);
 
@@ -57,25 +53,25 @@ angular.module('butterflyappApp')
           var longChecker = longitude.toFixed(3);
 
         $scope.checkGeoClick = function () {
-            CheckGeo.checkerYelp(latChecker, longChecker);
-            console.log('button has been click');
-            $scope.testStuff = CheckGeo.test();
-            console.log($scope.testStuff);
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
 
-            if($scope.testStuff.newLatToCheck === $scope.testStuff.newLatChecker && $scope.testStuff.newLongToCheck === $scope.testStuff.newLongChecker) {
-              console.log('you win');
-            } else {
-              console.log('you suck');
-            }
+              CheckGeo.checkerYelp(latChecker, longChecker);
+              $scope.testStuff = CheckGeo.test();
+              if(pos.lat.toFixed(3) === $scope.testStuff.newLatChecker && pos.long.toFixed(3) === $scope.testStuff.newLongChecker) {
+
+                console.log('you win');
+              } else {
+                console.log('you suck');
+              }
+
+            });
           };
-
-
-
-
-
-
-
-
+          };
 
       });
 
