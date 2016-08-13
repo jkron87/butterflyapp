@@ -10,7 +10,8 @@
 angular.module('butterflyappApp')
   .factory('googlemapsservice', function () {
     var map;
-
+    var randomNumber = Math.random() * (0.003 - 0.0002) + 0.0002;
+    console.log(randomNumber);
     function initMap(newLat, newLong) {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: newLat, lng: newLong},
@@ -31,7 +32,7 @@ angular.module('butterflyappApp')
           fillColor: '#98ddde',
           fillOpacity: 0.35,
           map: map,
-          center: {lat: newLat, lng: newLong},
+          center: {lat: newLat + randomNumber, lng: newLong + randomNumber},
           radius: 1000
         });
         var infoWindow = new google.maps.InfoWindow({map: map});

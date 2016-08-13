@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: View1routeCtrl', function () {
+xdescribe('Controller: View1routeCtrl', function () {
 
   // load the controller's module
   beforeEach(module('butterflyappApp'));

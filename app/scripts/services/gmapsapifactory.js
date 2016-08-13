@@ -11,7 +11,7 @@ angular.module('butterflyappApp')
 .factory("GeolocationService", ['$q', '$window', '$rootScope', function ($q, $window, $rootScope) {
      return function () {
          var deferred = $q.defer();
-
+         console.log('Im here!');
          if (!$window.navigator) {
              $rootScope.$apply(function() {
                  deferred.reject(new Error("Geolocation is not supported"));

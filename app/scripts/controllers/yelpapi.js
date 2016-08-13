@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name butterflyappApp.controller:YelpapiCtrl
- * @description
- * # YelpapiCtrl
- * Controller of the butterflyappApp
- */
 angular.module('butterflyappApp')
 .controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', 'CheckGeo', function($scope, MyYelpAPI, googlemapsservice, CheckGeo) {
       $scope.businesses = [];

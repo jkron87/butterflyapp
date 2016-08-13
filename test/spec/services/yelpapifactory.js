@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: yelpapifactory', function () {
+xdescribe('Service: yelpapifactory', function () {
 
   // load the service's module
   beforeEach(module('butterflyappApp'));

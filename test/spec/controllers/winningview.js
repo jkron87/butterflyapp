@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: WinningviewCtrl', function () {
+xdescribe('Controller: WinningviewCtrl', function () {
 
   // load the controller's module
   beforeEach(module('butterflyappApp'));
