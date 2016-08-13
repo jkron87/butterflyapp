@@ -1,12 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name butterflyappApp.googlemapsservice
- * @description
- * # googlemapsservice
- * Service in the butterflyappApp.
- */
+
 angular.module('butterflyappApp')
   .factory('googlemapsservice', function () {
     var map;
