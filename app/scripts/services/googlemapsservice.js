@@ -1,16 +1,11 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name butterflyappApp.googlemapsservice
- * @description
- * # googlemapsservice
- * Service in the butterflyappApp.
- */
+
 angular.module('butterflyappApp')
   .factory('googlemapsservice', function () {
     var map;
-
+    var randomNumber = Math.random() * (0.003 - 0.0002) + 0.0002;
+    console.log(randomNumber);
     function initMap(newLat, newLong) {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: newLat, lng: newLong},
@@ -31,7 +26,7 @@ angular.module('butterflyappApp')
           fillColor: '#98ddde',
           fillOpacity: 0.35,
           map: map,
-          center: {lat: newLat, lng: newLong},
+          center: {lat: newLat + randomNumber, lng: newLong + randomNumber},
           radius: 1000
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
@@ -56,7 +51,6 @@ angular.module('butterflyappApp')
         }
       }
 
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -64,7 +58,6 @@ angular.module('butterflyappApp')
                               'Error: Your browser doesn\'t support geolocation.');
       }
     return {initMap : initMap}
-
 
   }
 
