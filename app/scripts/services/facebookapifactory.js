@@ -3,7 +3,7 @@
 
 
 angular.module('butterflyappApp')
-.factory('facebookService', function(){
+.factory('facebookService', function facebookAPI(){
 
 
 // Facebook Login and Share
@@ -87,7 +87,9 @@ angular.module('butterflyappApp')
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-
+return{
+  facebookAPI: facebookAPI
+}
 
   )};
 

@@ -5,7 +5,7 @@ angular.module('butterflyappApp')
     var count = 100;
 
 
-    oButton.addEventListener('click', function() {
+    var subtractPoints = function() {
 
 
       	if (count>50) {
@@ -18,7 +18,8 @@ angular.module('butterflyappApp')
 
 
 return {
-		pointsPoints: pointsPoints
+		pointsPoints: pointsPoints,
+		subtractPoints: subtractPoints
 	};
 
 });

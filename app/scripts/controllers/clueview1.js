@@ -9,7 +9,7 @@
  */
 angular.module('butterflyappApp')
   .controller('Clueview1Ctrl', ['$scope', 'pointsService', function ($scope, pointsService) {
-  
+  	$scope.subtractPoints = pointsPoints.subtractPoints();
 
 
   }]);
