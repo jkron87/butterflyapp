@@ -32,7 +32,7 @@ angular.module('butterflyappApp')
         fillOpacity: 0.35,
         map: map,
         center: {lat:newLat, lng:newLong},
-        radius: 1000
+        radius: 400
       });
 
       var createMarker = function (){
@@ -41,15 +41,11 @@ angular.module('butterflyappApp')
         position: myLatLng,
         map: map,
       })
-      
+
     }
     createMarker();
   }
 
-
-
-
-    }
 
     return {initMap : initMap,
           };

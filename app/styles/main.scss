@@ -3,6 +3,89 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+//styling for progress bar
+$primary-color: #2ecc71;
+$nav-border-color: #27ae60;
+$nav-bg-color: #2ecc71;
+$bg-color: #f7f7f7;
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	transform: rotate($deg);
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+}
+.nav-progress {
+	display: table;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+	height: 50px;
+	border: 1px solid $nav-border-color;
+	background-color: $bg-color;
+	@include border-radius(6px);
+	> div {
+		position: relative;
+		display: table-cell;
+		padding: 14px 0;
+		color: $nav-border-color;
+		text-align: center;
+		font-size: 1.125em;
+		line-height: 1.250em;
+		&.complete {
+			background-color: $nav-bg-color;
+			color: #FFF;
+			.arrow {
+				border: 1px solid $nav-border-color !important;
+				background: $nav-bg-color !important;
+			}
+		}
+		&.active {
+			background-color: $primary-color;
+			color: #FFF;
+			.arrow {
+				border: none !important;
+				background: $primary-color !important;
+			}
+		}
+	}
+}
+.arrow-wrapper {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	.arrow-cover {
+		position: absolute;
+		overflow: hidden;
+		width: 24px;
+		height: 50px;
+		.arrow {
+			position: absolute;
+			left: -34px;
+			width: 50px;
+			height: 50px;
+			border: 1px solid $nav-border-color;
+			background: transparent;
+			@include border-radius(6px);
+			@include rotate(45deg);
+		}
+	}
+}
+
+
 #map {
   height: 400px;
   width: 400px;
@@ -101,4 +184,40 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

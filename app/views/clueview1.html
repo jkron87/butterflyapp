@@ -1,8 +1,32 @@
 <p>This is the clueview1 view.</p>
 
-<div ng-controller="Clueview1Ctrl">
-  <div id ="map"></div>
+<h3>Good luck catching your first ButterFly!</h3>
+<div class="nav-progress">
+	<div class="active">
+		εїз
+    <div class="arrow-wrapper">
+      <div class="arrow-cover">
+        <div class="arrow"></div>
+      </div>
+    </div>
+	</div>
+	<div>
+		εїз
+    <div class="arrow-wrapper">
+      <div class="arrow-cover">
+        <div class="arrow"></div>
+      </div>
+    </div>
+	</div>
+	<div>
+		εїз
+	</div>
 </div>
+<br>
+
+<div ng-controller="Clueview1Ctrl">
+    <div id ="map"></div>
+
 <div  ng-controller="YelpapiCtrl">
       <p class="clue" ng-show="count===1">
       {{category}}
@@ -31,3 +55,4 @@
       <a id= "skip" class="btn btn-lg btn-success" ng-href="#/clueview2">Skip<span class="glyphicon glyphicon-ok"></span></a>
 
   </div>
+</div>
