@@ -9,6 +9,7 @@
  */
 angular.module('butterflyappApp')
 
+
   .controller('Clueview3Ctrl', function ($scope) {
     var count = 100;
     var oText = document.getElementById("points");
@@ -39,3 +40,4 @@ angular.module('butterflyappApp')
 //   	$scope.pointsPoints;
 //
 //   }]);
+

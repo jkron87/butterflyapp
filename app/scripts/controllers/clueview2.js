@@ -9,7 +9,9 @@
  */
 angular.module('butterflyappApp')
   .controller('Clueview2Ctrl', ['$scope', 'pointsService', function ($scope, pointsService) {
-  	$scope.pointsPoints;
+  	$scope.ptFunction2 = function() {
+  		pointsService.pointsPoints();
+  	}
 
 
   }]);
