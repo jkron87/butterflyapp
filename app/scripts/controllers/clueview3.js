@@ -9,7 +9,10 @@
  */
 angular.module('butterflyappApp')
   .controller('Clueview3Ctrl', ['$scope', 'pointsService', function ($scope, pointsService) {
-  	$scope.pointsPoints;
-  
+  	$scope.ptFunction3 = function() {
+  		pointsService.pointsPoints();
+  	};
+
 
   }]);
+
