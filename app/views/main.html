@@ -1,8 +1,14 @@
-
+<div ng-controller="MainCtrl as vm">
 <div class="jumbotron">
   <h1>Welcome!</h1>
   <p class="lead">
     When you're ready to begin your scavenger hunt, be sure your GPS is turned on and click start!
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#/clueview1">Start Hunt!<span class="glyphicon glyphicon-ok"></span></a></p>
+
+</div>
+
+<div class="container">
+    <br />
+    <button class="btn btn-primary" ng-click="vm.open()">Open Modal</button>
 </div>

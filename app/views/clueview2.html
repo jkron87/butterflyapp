@@ -1,9 +1,9 @@
-<p>This is the clueview2 view.</p>
+<p>Your destination is somewhere in the blue circle. Click for a hint below.</p>
 
-<div ng-controller="Clueview2Ctrl">
+<div ng-controller="Clueview1Ctrl">
   <div id ="map"></div>
 </div>
-<div  ng-controller="YelpapiCtrl">
+<div  ng-controller="YelpapiCtrl as vm">
   <p class="clue" ng-show="count===1">
   {{category}}
 
@@ -24,8 +24,7 @@
     <p>POINTS:</p>
     <div id="points">100</div>
 
-
-      <button id= "hint" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
-      <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check In!<span class="glyphicon glyphicon-ok"></span></a>
-      <a id= "skip" class="btn btn-lg btn-success" ng-href="#/clueview3">Skip<span class="glyphicon glyphicon-ok"></span></a>
+        <button id= "hint" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
+          <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check In!<span class="glyphicon glyphicon-ok"></span></a>
+          <a id= "skip" class="btn btn-lg btn-success" ng-href="#/clueview3">Skip<span class="glyphicon glyphicon-ok"></span></a>
   </div>
