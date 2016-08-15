@@ -2,8 +2,7 @@
 
 
 
-angular.module('butterflyappApp')
-.factory('facebookService', function facebookAPI(){
+
 
 
 // Facebook Login and Share
@@ -44,13 +43,13 @@ angular.module('butterflyappApp')
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '1242898765729130',
-    cookie     : true,  // enable cookies to allow the server to access
+    cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use graph api version 2.5
   });
 
-  // Now that we've initialized the JavaScript SDK, we call
+  // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -87,9 +86,3 @@ angular.module('butterflyappApp')
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-return{
-  facebookAPI: facebookAPI
-}
-
-  )};
-
