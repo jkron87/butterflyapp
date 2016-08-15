@@ -3,7 +3,7 @@
 
 
 angular.module('butterflyappApp')
-.factory('facebookAPI', function(){
+.factory('facebookService', function(){
 
 
 // Facebook Login and Share
