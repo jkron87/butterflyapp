@@ -8,22 +8,11 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
+
   .controller('Clueview3Ctrl', function ($scope) {
-  	var oButton = document.getElementById("hint3");
-    var oText = document.getElementById("points3");
     var count = 100;
-
-    oButton.addEventListener('click', function() {
-
-
-    	if (count>50) {
-        	oText.innerHTML = count -= 10;
-    		} else {
-    		oText.innerHTML = count = 50;
-    		}
-    }, false);
-
-
+    var oText = document.getElementById("points");
+    var oButton = document.getElementById('hint');
     // Get the modal to create it
     var modal = document.getElementById('myModal');
     // Get the button that opens the modal
@@ -44,11 +33,9 @@ angular.module('butterflyappApp')
             modal.style.display = "none";
         }
     }
-    //update points based on number of hints given
-    oButton.addEventListener('click', function() {
-      document.getElementById("totalPoints").innerHTML = "Total Points: " + count;
-    }, false);
-
-
-
  });
+
+// .controller('Clueview3Ctrl', ['$scope', 'pointsService', function ($scope, pointsService) {
+//   	$scope.pointsPoints;
+//
+//   }]);

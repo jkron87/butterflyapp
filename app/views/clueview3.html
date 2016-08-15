@@ -1,5 +1,7 @@
 <p>This is the clueview3 view.</p>
 
+
+
 <h3>Catch one more ButterFly to win!</h3>
 <div class="nav-progress">
 	<div class="complete">
@@ -24,7 +26,7 @@
 </div>
 <br>
 
-<div ng-controller="Clueview3Ctrl">
+<!-- <div ng-controller="Clueview3Ctrl"> -->
   <div id ="map"></div>
 
   <div  ng-controller="YelpapiCtrl">
@@ -43,11 +45,10 @@
     {{shuffledName}}
   </p>
 
-
-    <p>POINTS:</p>
-    <div id="points3">100</div>
-      <button id= "hint3" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
-      <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check my location<span class="glyphicon glyphicon-ok"></span></a>
+    		<p>POINTS:</p>
+				<div id="points">100</div>
+					<button id= "hint" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0"> Give me a hint </button>
+					<a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check In!<span class="glyphicon glyphicon-ok"></span></a>
 
       <!-- Trigger/Open The Modal -->
       <button class="btn btn-lg btn-success" id="myBtn">Skip</button>
@@ -62,8 +63,3 @@
           <!-- Load Facebook SDK for JavaScript -->
         </div>
       </div>
-
-
-
-  </div>
-  </div>

@@ -8,19 +8,9 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('Clueview1Ctrl', function ($scope) {
-  	var oButton = document.getElementById("hint1");
-    var oText = document.getElementById("points1");
-    var count = 100;
-    oButton.addEventListener('click', function() {
+  .controller('Clueview1Ctrl', ['$scope', 'pointsService', function ($scope, pointsService) {
+  	$scope.pointsPoints;
 
 
-      	if (count>50) {
-          	oText.innerHTML = count -= 10;
-      		  } else {
-      			oText.innerHTML = count = 50;
-      		  }
-    }, false);
+  }]);
 
-
-  });
