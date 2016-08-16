@@ -32,6 +32,17 @@ angular.module('butterflyappApp')
     console.log('losing');
   };
 
+  var final = function () {
+  vm.open = function () {
+      var modalInstance = $uibModal.open({
+          templateUrl: "views/winningview.html",
+          controller: 'ModalCtrl as vm'
+      });
+  };
+  vm.open();
+  console.log('final');
+};
+
 
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
@@ -87,11 +98,13 @@ angular.module('butterflyappApp')
 
                 CheckGeo.checkerYelp(latChecker, longChecker);
                 $scope.testStuff = CheckGeo.test();
+
                 if(pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker) {
                   console.log('you win');
                   winning();
                 } else if ($scope.view3 === true && pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker) {
                   console.log("view three. you win");
+                  final();
                 } else {
                   console.log('you lose');
                   losing();
