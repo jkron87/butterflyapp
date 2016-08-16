@@ -1,10 +1,4 @@
 
-
-
-
-// angular.module('butterflyappApp')
-// .factory('facebookService', function facebookAPI(){
-// });
 // Facebook Login and Share
 
 
@@ -87,4 +81,8 @@
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> origin/master
