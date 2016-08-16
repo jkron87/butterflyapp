@@ -100,7 +100,6 @@ angular.module('butterflyappApp')
 
           var latChecker = latitude.toFixed(3);
           var longChecker = longitude.toFixed(3);
-
           $scope.checkGeoClick = function () {
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function(position) {
@@ -109,16 +108,19 @@ angular.module('butterflyappApp')
                   lng: position.coords.longitude
                 };
 
+                var currentLatitude = Number(pos.lat.toFixed(3));
+                var currentLongitude = Number(pos.lng.toFixed(3));
+
                 CheckGeo.checkerYelp(latChecker, longChecker);
                 $scope.testStuff = CheckGeo.test();
 
-                if(pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker && $scope.view1===true) {
+                if(currentLatitude === latChecker && currentLongitude === longChecker && $scope.view1===true) {
                   console.log('you win clue1');
                   winning1();
-                } else if (pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker && $scope.view2===true) {
+                } else if (currentLatitude === latChecker && currentLongitude === longChecker && $scope.view2===true) {
                   console.log("you win clue2");
                   winning2();
-                } else if ($scope.view3 === true && pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker) {
+                } else if ($scope.view3 === true && currentLatitude === latChecker && currentLongitude === longChecker) {
                   console.log("view three. you win the game");
                   final();
                 } else {
