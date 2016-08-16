@@ -90,6 +90,24 @@ $bg-color: #f7f7f7;
 	}
 }
 
+	#accordion {
+		margin: auto;
+		width: 75%;
+	}
+
+  .accordion-toggle {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+  .accordion-content {
+		display: none;
+		text-align: left;
+	}
+	.accordion-content p {
+		font-size: 14px;
+	}
+
+
 
 #map {
   height: 400px;
