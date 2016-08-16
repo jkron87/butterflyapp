@@ -39,6 +39,7 @@ angular.module('butterflyappApp')
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
+          console.log(pos);
 
           infoWindow.setPosition(pos);
           infoWindow.setContent('You are here!');

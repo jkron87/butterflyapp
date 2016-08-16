@@ -10,16 +10,29 @@
 angular.module('butterflyappApp')
 .controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', 'CheckGeo', '$uibModal', function($scope, MyYelpAPI, googlemapsservice, CheckGeo, $uibModal) {
       var vm = this;
-      var winning = function () {
+      var winning1 = function () {
       vm.open = function () {
           var modalInstance = $uibModal.open({
               templateUrl: "views/modal-view-winning.html",
               controller: 'ModalCtrl as vm'
           });
+
       };
       vm.open();
       console.log('winning');
     };
+
+    var winning2 = function () {
+    vm.open = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: "views/modal-view-winning2.html",
+            controller: 'ModalCtrl as vm'
+        });
+
+    };
+    vm.open();
+    console.log('winning');
+  };
 
     var losing = function () {
     vm.open = function () {
@@ -32,16 +45,28 @@ angular.module('butterflyappApp')
     console.log('losing');
   };
 
+  var final = function () {
+  vm.open = function () {
+      var modalInstance = $uibModal.open({
+          templateUrl: "views/winningview.html",
+          controller: 'ModalCtrl as vm'
+      });
+  };
+  vm.open();
+  console.log('final');
+};
+
 
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
-
+        console.log(data);
           $scope.randomNumber = Math.floor(Math.random() * 20);
         //yelp data
           $scope.businesses = data.businesses;
           $scope.category = $scope.businesses[$scope.randomNumber].categories[0][0];
           $scope.snippet = $scope.businesses[$scope.randomNumber].snippet_text.toLowerCase();
           $scope.name = $scope.businesses[$scope.randomNumber].name.toLowerCase();
+          $scope.fullname = $scope.businesses[$scope.randomNumber].name;
           var regex = new RegExp($scope.name);
           $scope.snippetReplaced = $scope.snippet.replace(regex, "__________");
         // steve added latitude and longitude below
@@ -75,7 +100,6 @@ angular.module('butterflyappApp')
 
           var latChecker = latitude.toFixed(3);
           var longChecker = longitude.toFixed(3);
-
           $scope.checkGeoClick = function () {
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function(position) {
@@ -84,11 +108,21 @@ angular.module('butterflyappApp')
                   lng: position.coords.longitude
                 };
 
+                var currentLatitude = Number(pos.lat.toFixed(3));
+                var currentLongitude = Number(pos.lng.toFixed(3));
+
                 CheckGeo.checkerYelp(latChecker, longChecker);
                 $scope.testStuff = CheckGeo.test();
-                if(pos.lat.toFixed(3) === $scope.testStuff.newLatChecker && pos.long.toFixed(3) === $scope.testStuff.newLongChecker) {
-                  console.log('you win');
-                  winning();
+
+                if(currentLatitude === latChecker && currentLongitude === longChecker && $scope.view1===true) {
+                  console.log('you win clue1');
+                  winning1();
+                } else if (currentLatitude === latChecker && currentLongitude === longChecker && $scope.view2===true) {
+                  console.log("you win clue2");
+                  winning2();
+                } else if ($scope.view3 === true && currentLatitude === latChecker && currentLongitude === longChecker) {
+                  console.log("view three. you win the game");
+                  final();
                 } else {
                   console.log('you lose');
                   losing();

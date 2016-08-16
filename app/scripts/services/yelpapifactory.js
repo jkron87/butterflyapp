@@ -9,7 +9,7 @@
  */
 angular.module('butterflyappApp')
 .factory('MyYelpAPI', ['$http',
-    function ($http) {
+  function ($http) {
 
       var randomString = function (length, chars) {
         var result = '';
@@ -33,8 +33,8 @@ angular.module('butterflyappApp')
           oauth_signature_method: 	'HMAC-SHA1',
           oauth_timestamp: 					new Date().getTime(),
           oauth_nonce: 							randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-          sort:                      2,
-          radius_filter:             1600
+          radius_filter:             1600,
+          term:'coffee'
         }; // end params
         var consumerSecret = 				'6JyakyLKMF-cwZrJi3z4JrbACpY'; //Consumer Secret
         var tokenSecret = 					'Ipr_APAvZlMKR_VEMMDJPUk5hgk'; //Token Secret

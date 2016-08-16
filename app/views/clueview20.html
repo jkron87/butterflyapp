@@ -1,7 +1,11 @@
-<div ng-controller="Clueview2Ctrl" ng-init="view=2">
-<div  ng-controller="YelpapiCtrl as vm">
-<h3>Can you find the second ButterFly?</h3>
 <p>Your destination is somewhere in the blue circle. Click for a hint below.</p>
+
+<div ng-controller="Clueview2Ctrl">
+
+
+<div  ng-controller="YelpapiCtrl as vm">
+
+<h3>Can you find the second ButterFly?</h3>
 <div class="nav-progress">
 	<div class="complete">
 		εїз
@@ -24,9 +28,13 @@
 	</div>
 </div>
 <br>
+
   <div id ="map"></div>
+
   <p class="clue" ng-show="count===1">
   {{category}}
+
+
   </p>
   <p class= "clue" ng-show="count===2">
   {{snippetReplaced}}
@@ -38,12 +46,15 @@
   <p class="clue" ng-show="count===5">
   {{shuffledName}}
   </p>
-  <p class="clue" ng-show="count===6">
-  You're out of hints!
-  </p>
-    <a class="btn btn-lg btn-success" ng-init = "view2 = true" ng-click= "checkGeoClick()">Check In! <span class="glyphicon glyphicon-ok"></span></a>
-    <button id= "hint2" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Hint</button>
-    <a id= "skip" class="btn btn-lg btn-success" ng-click="reloadRoute()">Skip</span></a>
+
+
+    <p>POINTS:</p>
+    <div id="points2">100</div>
+
+
+      <button id= "hint2" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Give me a hint</button>
+      <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check In!<span class="glyphicon glyphicon-ok"></span></a>
+      <a id= "skip" class="btn btn-lg btn-success" ng-href="#/clueview3">Skip<span class="glyphicon glyphicon-ok"></span></a>
 
 
   </div>
