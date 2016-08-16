@@ -3,6 +3,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
+}
+
 //styling for progress bar
 $primary-color: #2ecc71;
 $nav-border-color: #27ae60;
