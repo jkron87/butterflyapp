@@ -8,7 +8,31 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', 'CheckGeo', function($scope, MyYelpAPI, googlemapsservice, CheckGeo) {
+.controller('YelpapiCtrl', ['$scope', 'MyYelpAPI', 'googlemapsservice', 'CheckGeo', '$uibModal', function($scope, MyYelpAPI, googlemapsservice, CheckGeo, $uibModal) {
+      var vm = this;
+      var winning = function () {
+      vm.open = function () {
+          var modalInstance = $uibModal.open({
+              templateUrl: "views/modal-view-winning.html",
+              controller: 'ModalCtrl as vm'
+          });
+      };
+      vm.open();
+      console.log('winning');
+    };
+
+    var losing = function () {
+    vm.open = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: "views/modalview.html",
+            controller: 'ModalCtrl as vm'
+        });
+    };
+    vm.open();
+    console.log('losing');
+  };
+
+
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
 
@@ -52,28 +76,31 @@ angular.module('butterflyappApp')
           var latChecker = latitude.toFixed(3);
           var longChecker = longitude.toFixed(3);
 
-        $scope.checkGeoClick = function () {
-          console.log("clicked");
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
+          $scope.checkGeoClick = function () {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
 
-              CheckGeo.checkerYelp(latChecker, longChecker);
-              $scope.testStuff = CheckGeo.test();
-              if(pos.lat.toFixed(3) === $scope.testStuff.newLatChecker && pos.long.toFixed(3) === $scope.testStuff.newLongChecker) {
+                CheckGeo.checkerYelp(latChecker, longChecker);
+                $scope.testStuff = CheckGeo.test();
+                if(pos.lat.toFixed(3) === $scope.testStuff.newLatChecker && pos.long.toFixed(3) === $scope.testStuff.newLongChecker) {
+                  console.log('you win');
+                  winning();
+                } else {
+                  console.log('you lose');
+                  losing();
+                }
 
-                console.log('you win');
-              } else {
-                console.log('you suck');
-              }
+              });
+            };
+            };
 
-            });
-          };
-          };
 
       });
+
+
 
   }]);
