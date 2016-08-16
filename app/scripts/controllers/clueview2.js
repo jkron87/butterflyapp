@@ -8,7 +8,9 @@
  * Controller of the butterflyappApp
  */
 angular.module('butterflyappApp')
-  .controller('Clueview2Ctrl', function ($scope) {
-
+.controller('Clueview2Ctrl', function ($scope, $route) {
+  $scope.reloadRoute = function() {
+    $route.reload();
+  }
 
   });

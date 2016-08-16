@@ -10,7 +10,11 @@
 angular.module('butterflyappApp')
 
 
-  .controller('Clueview3Ctrl', function ($scope) {
+.controller('Clueview3Ctrl', function ($scope, $route) {
+  $scope.reloadRoute = function() {
+    $route.reload();
+  }
+
    // 	var oButton3 = document.getElementById("hint3");
     // var oText3 = document.getElementById("points3");
     // var count3 = 100;
