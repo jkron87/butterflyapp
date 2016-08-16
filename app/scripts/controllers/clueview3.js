@@ -15,3 +15,4 @@ angular.module('butterflyappApp')
   $scope.reloadRoute = function() {
     $route.reload();
   }
+});
