@@ -20,6 +20,7 @@ angular
     'ngTouch',
     'ui.bootstrap'
   ])
+  
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
