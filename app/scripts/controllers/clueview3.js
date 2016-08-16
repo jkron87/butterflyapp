@@ -9,10 +9,10 @@
  */
 angular.module('butterflyappApp')
 
-
-
 .controller('Clueview3Ctrl', function ($scope, $route) {
   $scope.reloadRoute = function() {
     $route.reload();
+
   }
 });
+

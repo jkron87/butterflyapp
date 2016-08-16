@@ -1,7 +1,3 @@
-
-
-
-
 // Facebook Login and Share
 
 
