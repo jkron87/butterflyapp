@@ -1,5 +1,5 @@
 
-<div ng-controller="Clueview1Ctrl">
+<div ng-controller="Clueview1Ctrl" ng-init="view=1">
 <div  ng-controller="YelpapiCtrl as vm">
 
 
@@ -7,7 +7,7 @@
 <h3>Good luck catching your first ButterFly!</h3>
 <p>Your destination is somewhere in the blue circle. Click for a hint below.</p>
 <div class="nav-progress">
-	<div class="active">
+	<div class="active icon">
 		εїз
     <div class="arrow-wrapper">
       <div class="arrow-cover">
@@ -15,7 +15,7 @@
       </div>
     </div>
 	</div>
-	<div>
+	<div class = "icon">
 		εїз
     <div class="arrow-wrapper">
       <div class="arrow-cover">
@@ -23,7 +23,7 @@
       </div>
     </div>
 	</div>
-	<div>
+	<div class = "icon">
 		εїз
 	</div>
 </div>
@@ -47,9 +47,9 @@
   <p class="clue" ng-show="count===6">
   You're out of hints!
   </p>
-    
+
       <a class="btn btn-lg btn-success" ng-click= "checkGeoClick()">Check In! <span class="glyphicon glyphicon-ok"></span></a>
-      <button id= "hint1" class="btn btn-lg btn-success" ng-click="count = count + 1" ng-init="count=0">Hint</button>
+      <button id= "hint1" class="btn btn-lg btn-success" ng-init = "view1 = true" ng-click="count = count + 1" ng-init="count=0">Hint</button>
       <a id= "skip" class="btn btn-lg btn-success" ng-click="reloadRoute()">Skip</span></a>
   </div>
 </div>

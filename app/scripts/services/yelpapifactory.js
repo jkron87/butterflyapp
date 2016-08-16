@@ -27,7 +27,7 @@ angular.module('butterflyappApp')
         var url = 		'http://api.yelp.com/v2/search';
         var params = {
           callback: 								'angular.callbacks._' + n,
-          location: 								'Ann Arbor',
+          location: 								'Detroit',
           oauth_consumer_key: 			'XAj6qaNihVvooG8uB0Mg_g', // consumer key
           oauth_token: 							'6zEfT7oyziwzAYCs8mPskGUnCjEI4-Fp', //Token
           oauth_signature_method: 	'HMAC-SHA1',
