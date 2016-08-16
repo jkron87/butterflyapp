@@ -32,16 +32,28 @@ angular.module('butterflyappApp')
     console.log('losing');
   };
 
+  var final = function () {
+  vm.open = function () {
+      var modalInstance = $uibModal.open({
+          templateUrl: "views/winningview.html",
+          controller: 'ModalCtrl as vm'
+      });
+  };
+  vm.open();
+  console.log('final');
+};
+
 
       $scope.businesses = [];
       MyYelpAPI.retrieveYelp('', function(data) {
-
+        console.log(data);
           $scope.randomNumber = Math.floor(Math.random() * 20);
         //yelp data
           $scope.businesses = data.businesses;
           $scope.category = $scope.businesses[$scope.randomNumber].categories[0][0];
           $scope.snippet = $scope.businesses[$scope.randomNumber].snippet_text.toLowerCase();
           $scope.name = $scope.businesses[$scope.randomNumber].name.toLowerCase();
+          $scope.fullname = $scope.businesses[$scope.randomNumber].name;
           var regex = new RegExp($scope.name);
           $scope.snippetReplaced = $scope.snippet.replace(regex, "__________");
         // steve added latitude and longitude below
@@ -86,9 +98,13 @@ angular.module('butterflyappApp')
 
                 CheckGeo.checkerYelp(latChecker, longChecker);
                 $scope.testStuff = CheckGeo.test();
-                if(pos.lat.toFixed(3) === $scope.testStuff.newLatChecker && pos.long.toFixed(3) === $scope.testStuff.newLongChecker) {
+
+                if(pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker) {
                   console.log('you win');
                   winning();
+                } else if ($scope.view3 === true && pos.lat.toFixed(3) === latChecker && pos.long.toFixed(3) === longchecker) {
+                  console.log("view three. you win");
+                  final();
                 } else {
                   console.log('you lose');
                   losing();

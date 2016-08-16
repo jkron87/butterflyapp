@@ -10,42 +10,46 @@
 angular.module('butterflyappApp')
 
 
-  .controller('Clueview3Ctrl', function ($scope) {
-   	var oButton3 = document.getElementById("hint3");
-    var oText3 = document.getElementById("points3");
-    var count3 = 100;
+.controller('Clueview3Ctrl', function ($scope, $route) {
+  $scope.reloadRoute = function() {
+    $route.reload();
+  }
 
-    oButton3.addEventListener('click', function() {
-
-
-      	if (count3>50) {
-          	oText3.innerHTML = count3 -= 10;
-      		  } else {
-      			oText3.innerHTML = count3 = 50;
-      		  }
-
-      		  return count3;
-    	});
-    // Get the modal to create it
-    var modal = document.getElementById('myModal');
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    //Get the text of the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+   // 	var oButton3 = document.getElementById("hint3");
+    // var oText3 = document.getElementById("points3");
+    // var count3 = 100;
+    //
+    // oButton3.addEventListener('click', function() {
+    //
+    //
+    //   	if (count3>50) {
+    //       	oText3.innerHTML = count3 -= 10;
+    //   		  } else {
+    //   			oText3.innerHTML = count3 = 50;
+    //   		  }
+    //
+    //   		  return count3;
+    // 	});
+    // // Get the modal to create it
+    // var modal = document.getElementById('myModal');
+    // // Get the button that opens the modal
+    // var btn = document.getElementById("myBtn");
+    // // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("close")[0];
+    // //Get the text of the modal
+    // btn.onclick = function() {
+    //     modal.style.display = "block";
+    // }
+    // // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    //     modal.style.display = "none";
+    // }
+    // // When the user clicks anywhere outside of the modal, close it
+    // window.onclick = function(event) {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+    // }
 
     window.fbAsyncInit = function() {
   FB.init({
