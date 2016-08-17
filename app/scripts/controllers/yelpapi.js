@@ -115,7 +115,7 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
           };
         };
       }, $location.search().city, $location.search().term);
->>>>>>> bef3f3a59678d71d9e43c9842ac21f3b7c24c962
+
 
 
 
