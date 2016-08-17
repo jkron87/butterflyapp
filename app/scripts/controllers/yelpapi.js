@@ -66,7 +66,6 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
           return this;
         };
 
-
         //yelp data
         $scope.businesses = data.businesses;
         $scope.category = $scope.businesses[$scope.randomNumber].categories[0][0];
@@ -115,9 +114,6 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
           };
         };
       }, $location.search().city, $location.search().term);
-
-
-
 
   }
 ]);

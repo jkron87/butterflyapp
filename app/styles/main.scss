@@ -8,6 +8,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   font-size: 2.5em;
 }
 
+#tagline {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
 //styling for progress bar
 $primary-color: #5bc0de;
 $nav-border-color: #5bc0de;
@@ -30,13 +36,15 @@ $bg-color: #f7f7f7;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
+  margin: auto;
+  text-align: center;
 }
 .nav-progress {
 	display: table;
 	overflow: hidden;
-	margin: 0;
+	margin: auto;
 	width: 100%;
-  max-width: 400px;
+
   min-width: 200px;
 	height: 50px;
 	border: 1px solid $nav-border-color;
@@ -92,12 +100,12 @@ $bg-color: #f7f7f7;
 
 	#accordion {
 		margin: auto;
-		width: 75%;
+		width: 55%;
 	}
 
   .accordion-toggle {
 		cursor: pointer;
-		text-decoration: underline;
+    font-size: 21px;
 	}
   .accordion-content {
 		display: none;
@@ -110,9 +118,11 @@ $bg-color: #f7f7f7;
 
 
 #map {
-  height: 400px;
-  width: 400px;
-  text-align: center;
+  height: 80%;
+  min-height: 25em;
+  width: 100%;
+  min-width: 15em;
+  margin: auto;
 }
 
 img {
@@ -185,6 +195,9 @@ body {
   .btn {
     font-size: 21px;
     padding: 14px 24px;
+    margin-top: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 
@@ -197,10 +210,22 @@ body {
   }
 }
 
+// Adjusts space below logo
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 730px;
+    min-height: 4.4em;
+
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+    min-height: 4.4em;
+
   }
 
   /* Remove the padding we set earlier */
@@ -210,6 +235,7 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
@@ -267,6 +293,10 @@ body {
 #teamtitle, .team {
   text-align: center;
 
+}
+
+#teamtitle {
+  font-size: 21px;
 }
 
 .pics {
