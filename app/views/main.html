@@ -1,25 +1,39 @@
 
 <div class="jumbotron">
-  <h1>Welcome!</h1>
+  <h2 class="title">LAND SOMEWHERE <strong>NEW</strong></h2>
+  <img src="images/butterflymain.png" class="main-butterfly">
   <p class="lead">
-    When you're ready to begin your scavenger hunt, be sure your GPS is turned on and click start!
   </p>
   <p>Where would you like to play?</p>
-  <input type="text" class="form-control" name="name" placeholder="Detroit" ng-model="city"><br>
-  <p>What kinds of places would you like to go to?</p>
-  <input type="text" class="form-control" name="name" placeholder="Coffee shops, restaurants, shops, etc." ng-model="term"><br>
+  <div class="form-group">
 
-  <p><button class="btn btn-lg btn-info" ng-click="goToView1()">Start Hunt!<span class="glyphicon glyphicon-ok"></span></button></p>
-
-  <div id="accordion">
-    <h5 class="accordion-toggle">Click for Directions</h5>
-    <div class="accordion-content">
-      <p><strong>Step 1:</strong> Start Hunt!</p>
-      <p><strong>Step 2:</strong> Click the Hint button to learn about your destination.</p>
-      <p><strong>Step 3:</strong> If you need to, click the Skip button for a new destination.</p>
-      <p><strong>Step 4:</strong> Check In when you arrive.</p>
-      <p><strong>Step 5:</strong> Find 2 more places to win!</p>
+  <input type="text" class="form-control" name="name" placeholder="Detroit" ng-model="city"/>
+  <select class="form-control" name="term" ng-model="term">
+      <option value="restaurant">Restaurants</option>
+      <option value="bar">Coffee Shops</option>
+      <option value="coffee shop">Bars</option>
+      <option value="museum">Museums</option>
+      <option value="shopping">Shops</option>
+      <option value="park">Parks</option>
+    </select>
+    <div id="accordion">
+      <h5 class="accordion-toggle">Click for Directions</h5>
+      <div class="accordion-content">
+        <p><strong>Step 1:</strong> Start Hunt!</p>
+        <p><strong>Step 2:</strong> Click the Hint button to learn about your destination.</p>
+        <p><strong>Step 3:</strong> If you need to, click the Skip button for a new destination.</p>
+        <p><strong>Step 4:</strong> Check In when you arrive.</p>
+        <p><strong>Step 5:</strong> Find 2 more places to win!</p>
+      </div>
     </div>
-  </div>
+    <p class="start-button"><button class="btn btn-lg btn-info" ng-click="goToView1()">Start Hunt!<span class="glyphicon glyphicon-ok"></span></button></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 
 </div>
