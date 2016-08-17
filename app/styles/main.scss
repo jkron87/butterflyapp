@@ -227,6 +227,25 @@ body {
   }
 }
 
+<<<<<<< HEAD
+// Adjusts space below logo
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 730px;
+    min-height: 4.4em;
+    
+
+  }
+
+  li {
+    
+  }
+
+}
+
+=======
+>>>>>>> 1a81d9ef58a642a30520a47f9746e27eb3bbbb76
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -308,3 +327,33 @@ body {
 .pics {
   margin: 1em;
 }
+
+
+* {
+  text-align: center;
+}
+
+
+#js-navbar-collapse{
+  float: right;
+}
+
+.navbar-header {
+  float: center;
+}
+
+
+// #facebook {
+//   list-style-type: none;
+//   float: right;
+  
+// }
+
+// #facebook li {
+//   display: inline;
+//   padding: 1em;
+//   padding-top: 200px;
+// }
+
+
+
