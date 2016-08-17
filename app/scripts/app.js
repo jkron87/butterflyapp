@@ -49,11 +49,13 @@ angular
         templateUrl: 'views/clueview1.html',
         controller: 'Clueview1Ctrl',
         controllerAs: 'clueview1',
+        reloadRoute: false
       })
       .when('/winningview', {
         templateUrl: 'views/winningview.html',
         controller: 'WinningviewCtrl',
         controllerAs: 'winningview',
+
       })
       .otherwise({
         redirectTo: '/'

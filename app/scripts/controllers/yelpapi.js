@@ -108,7 +108,7 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
                 final();
               } else {
                 console.log('you lose');
-                winning1();
+                losing();
               }
             });
           };
