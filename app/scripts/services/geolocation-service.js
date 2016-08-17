@@ -7,6 +7,7 @@ angular.module('butterflyappApp')
     var position = $window.navigator.geolocation.getCurrentPosition();
     var deferred = $q.defer();
     deferred.resolve(position);
+
     return deferred.promise;
   };
 
