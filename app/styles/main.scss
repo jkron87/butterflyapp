@@ -15,9 +15,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   font-family: 'Lato', sans-serif;
   font-weight: 100;
 }
-.form-control{
-  display: inline;
-}
 
 .start-button {
   margin-top: 20px;
@@ -129,7 +126,6 @@ $bg-color: #f7f7f7;
 	}
 
 
-
 #map {
   height: 400px;
   width: 400px;
@@ -152,9 +148,17 @@ img {
 
 .form-control {
   width: 200px;
+  display: inline;
   margin: 10px auto;
 }
 
+input {
+  padding: 10px;
+}
+
+select {
+  padding:10px;
+}
 
 body {
   padding: 0;
