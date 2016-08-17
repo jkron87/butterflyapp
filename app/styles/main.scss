@@ -8,10 +8,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   font-size: 2.5em;
 }
 
-#tagline {
-  font-size: 12px;
-  font-weight: normal;
-  font-family: sans-serif;
+.buttons {
+  display: inline;
+}
+.jumbotron h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.start-button {
+  margin-top: 20px;
+}
+
+h2.title {
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 //styling for progress bar
@@ -36,15 +48,13 @@ $bg-color: #f7f7f7;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
-  margin: auto;
-  text-align: center;
 }
 .nav-progress {
 	display: table;
 	overflow: hidden;
-	margin: auto;
+	margin: 0;
 	width: 100%;
-
+  max-width: 400px;
   min-width: 200px;
 	height: 50px;
 	border: 1px solid $nav-border-color;
@@ -100,12 +110,12 @@ $bg-color: #f7f7f7;
 
 	#accordion {
 		margin: auto;
-		width: 55%;
+		width: 75%;
 	}
 
   .accordion-toggle {
 		cursor: pointer;
-    font-size: 21px;
+		text-decoration: underline;
 	}
   .accordion-content {
 		display: none;
@@ -116,13 +126,9 @@ $bg-color: #f7f7f7;
 	}
 
 
-
 #map {
-  height: 80%;
-  min-height: 25em;
-  width: 100%;
-  min-width: 15em;
-  margin: auto;
+  height: 400px;
+  width: 400px;
 }
 
 img {
@@ -142,12 +148,26 @@ img {
 
 .form-control {
   width: 200px;
-  margin: auto;
+  display: inline;
+  margin: 10px auto;
+}
+
+input {
+  padding: 10px;
+}
+
+select {
+  padding:10px;
 }
 
 body {
   padding: 0;
   color: #6d6d6d;
+}
+
+
+.main-butterfly {
+  width: 50%;
 }
 
 .clue {
@@ -195,9 +215,6 @@ body {
   .btn {
     font-size: 21px;
     padding: 14px 24px;
-    margin-top: 14px;
-    margin-left: 5px;
-    margin-right: 5px;
   }
 }
 
@@ -217,15 +234,19 @@ body {
     max-width: 730px;
     min-height: 4.4em;
 
+
   }
+
+  li {
+
+  }
+
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
-    min-height: 4.4em;
-
   }
 
   /* Remove the padding we set earlier */
@@ -235,7 +256,6 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
@@ -275,6 +295,12 @@ body {
     font-size: 28px;
     font-weight: bold;
 }
+
+.icon {
+  width: 20px;
+  padding: 0;
+  margin: 0
+}
 .close:hover,
 .close:focus {
     color: black;
@@ -295,14 +321,33 @@ body {
 
 }
 
-#teamtitle {
-  font-size: 21px;
-}
-
 .pics {
   margin: 1em;
 }
 
+
 * {
   text-align: center;
 }
+
+
+#js-navbar-collapse{
+  float: right;
+}
+
+.navbar-header {
+  float: center;
+}
+
+
+// #facebook {
+//   list-style-type: none;
+//   float: right;
+
+// }
+
+// #facebook li {
+//   display: inline;
+//   padding: 1em;
+//   padding-top: 200px;
+// }
