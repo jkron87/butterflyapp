@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: GmapsapiCtrl', function () {
+xdescribe('Controller: GmapsapiCtrl', function () {
 
   // load the controller's module
   beforeEach(module('butterflyappApp'));

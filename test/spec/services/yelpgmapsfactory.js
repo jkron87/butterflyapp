@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: yelpgmapsfactory', function () {
+xdescribe('Service: yelpgmapsfactory', function () {
 
   // load the service's module
   beforeEach(module('butterflyappApp'));

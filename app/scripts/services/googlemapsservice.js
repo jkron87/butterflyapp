@@ -21,16 +21,26 @@ angular.module('butterflyappApp')
       console.log(newLong);
 
       var cityCircle = new google.maps.Circle({
-        strokeColor: '#98ddde',
+        strokeColor: '#5bc0de',
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#98ddde',
+        fillColor: '#5bc0de',
         fillOpacity: 0.35,
         map: map,
         center: {lat: newLat + randomNumber, lng: newLong + randomNumber},
         radius: 1000
       });
-      var infoWindow = new google.maps.InfoWindow({map: map});
+        var cityCircle = new google.maps.Circle({
+          strokeColor: '#98ddde',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#98ddde',
+          fillOpacity: 0.35,
+          map: map,
+          center: {lat: newLat + randomNumber, lng: newLong + randomNumber},
+          radius: 1000
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
 
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
@@ -40,6 +50,7 @@ angular.module('butterflyappApp')
             lng: position.coords.longitude
           };
           console.log(pos);
+
 
           infoWindow.setPosition(pos);
           infoWindow.setContent('You are here!');

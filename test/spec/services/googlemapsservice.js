@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: googlemapsservice', function () {
+xdescribe('Service: googlemapsservice', function () {
 
   // load the service's module
   beforeEach(module('butterflyappApp'));

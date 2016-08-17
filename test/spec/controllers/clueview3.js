@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: Clueview3Ctrl', function () {
+xdescribe('Controller: Clueview3Ctrl', function () {
 
   // load the controller's module
   beforeEach(module('butterflyappApp'));
