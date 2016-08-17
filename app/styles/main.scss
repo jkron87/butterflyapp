@@ -216,8 +216,14 @@ body {
   .container {
     max-width: 730px;
     min-height: 4.4em;
+    
 
   }
+
+  li {
+    
+  }
+
 }
 
 /* Responsive: Portrait tablets and up */
@@ -306,3 +312,27 @@ body {
 * {
   text-align: center;
 }
+
+
+#js-navbar-collapse{
+  float: right;
+}
+
+.navbar-header {
+  float: center;
+}
+
+
+// #facebook {
+//   list-style-type: none;
+//   float: right;
+  
+// }
+
+// #facebook li {
+//   display: inline;
+//   padding: 1em;
+//   padding-top: 200px;
+// }
+
+
