@@ -4,8 +4,12 @@
   <p class="lead">
     When you're ready to begin your scavenger hunt, be sure your GPS is turned on and click start!
   </p>
+  <p>Where would you like to play?</p>
+  <input type="text" class="form-control" name="name" placeholder="Detroit" ng-model="city"><br>
+  <p>What kinds of places would you like to go to?</p>
+  <input type="text" class="form-control" name="name" placeholder="Coffee shops, restaurants, shops, etc." ng-model="term"><br>
 
-  <p><a class="btn btn-lg btn-success" ng-href="#/clueview1">Start Hunt!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p><button class="btn btn-lg btn-info" ng-click="goToView1()">Start Hunt!<span class="glyphicon glyphicon-ok"></span></button></p>
 
   <div id="accordion">
     <h5 class="accordion-toggle">Click for Directions</h5>

@@ -21,10 +21,10 @@ angular.module('butterflyappApp')
       console.log(newLong);
 
       var cityCircle = new google.maps.Circle({
-        strokeColor: '#98ddde',
+        strokeColor: '#5bc0de',
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#98ddde',
+        fillColor: '#5bc0de',
         fillOpacity: 0.35,
         map: map,
         center: {lat: newLat + randomNumber, lng: newLong + randomNumber},
