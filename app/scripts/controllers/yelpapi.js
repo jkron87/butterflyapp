@@ -125,7 +125,7 @@ angular.module('butterflyappApp')
                   final();
                 } else {
                   console.log('you lose');
-                  final();
+                  losing();
                 }
 
               });

@@ -112,6 +112,7 @@ $bg-color: #f7f7f7;
 #map {
   height: 400px;
   width: 400px;
+  text-align: center;
 }
 
 img {
@@ -260,4 +261,8 @@ body {
 
 .pics {
   margin: 1em;
+}
+
+* {
+  text-align: center;
 }
