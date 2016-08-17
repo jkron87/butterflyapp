@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: YelpapiCtrl', function () {
+xdescribe('Controller: YelpapiCtrl', function () {
 
   // load the controller's module
   beforeEach(module('butterflyappApp'));

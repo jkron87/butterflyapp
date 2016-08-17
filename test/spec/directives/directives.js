@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: directives', function () {
+xdescribe('Directive: directives', function () {
 
   // load the directive's module
   beforeEach(module('butterflyappApp'));
