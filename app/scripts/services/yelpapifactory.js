@@ -29,14 +29,14 @@ angular.module('butterflyappApp')
         var url = 		'http://api.yelp.com/v2/search';
         var params = {
           callback: 								'angular.callbacks._' + n,
-          location: 								city || 'Ann Arbor',
+          location: 								city || 'Detroit',
           oauth_consumer_key: 			'XAj6qaNihVvooG8uB0Mg_g', // consumer key
           oauth_token: 							'6zEfT7oyziwzAYCs8mPskGUnCjEI4-Fp', //Token
           oauth_signature_method: 	'HMAC-SHA1',
           oauth_timestamp: 					new Date().getTime(),
           oauth_nonce: 							randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
           radius_filter:             1600,
-          term:                      term
+          term:                      term || '',
         }; // end params
         var consumerSecret = 				'6JyakyLKMF-cwZrJi3z4JrbACpY'; //Consumer Secret
         var tokenSecret = 					'Ipr_APAvZlMKR_VEMMDJPUk5hgk'; //Token Secret
