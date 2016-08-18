@@ -81,8 +81,8 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
         $scope.shuffledName = $scope.businesses[$scope.randomNumber].name.split('').shuffle().join('');
         MyYelpAPI.increaseN();
         googlemapsservice.initMap(latitude, longitude);
-        var latChecker = latitude.toFixed(3);
-        var longChecker = longitude.toFixed(3);
+        var latChecker = latitude.toFixed(0);
+        var longChecker = longitude.toFixed(0);
         $scope.checkGeoClick = function() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -90,19 +90,21 @@ angular.module('butterflyappApp').controller('YelpapiCtrl', ['$scope', 'MyYelpAP
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
               };
-              var currentLatitude = Number(pos.lat.toFixed(3));
-              var currentLongitude = Number(pos.lng.toFixed(3));
+              var currentLatitude = Number(pos.lat.toFixed(0));
+              var currentLongitude = Number(pos.lng.toFixed(0));
+              console.log(currentLatitude + ',' + currentLongitude);
+              console.log(latChecker + ',' + longChecker);
               CheckGeo.checkerYelp(latChecker, longChecker);
               $scope.testStuff = CheckGeo.test();
-              if (currentLatitude === latChecker && currentLongitude === longChecker && $scope.view1 ===
+              if (currentLatitude == latChecker && currentLongitude == longChecker && $scope.view1 ===
                 true) {
                 console.log('you win clue1');
                 winning1();
-              } else if (currentLatitude === latChecker && currentLongitude === longChecker && $scope.view2 ===
+              } else if (currentLatitude == latChecker && currentLongitude == longChecker && $scope.view2 ===
                 true) {
                 console.log("you win clue2");
                 winning2();
-              } else if ($scope.view3 === true && currentLatitude === latChecker && currentLongitude ===
+              } else if ($scope.view3 === true && currentLatitude == latChecker && currentLongitude ==
                 longChecker) {
                 console.log("view three. you win the game");
                 final();
