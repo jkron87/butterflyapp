@@ -26,12 +26,12 @@ angular.module('butterflyappApp')
 
       var retrieveYelp = function (name, callback, city, term) {
         var method = 	'GET';
-        var url = 		'//api.yelp.com/v2/search';
+        var url = 		'http://api.yelp.com/v2/search';
         var params = {
           callback: 								'angular.callbacks._' + n,
           location: 								city || 'Detroit',
           oauth_consumer_key: 			'XAj6qaNihVvooG8uB0Mg_g', // consumer key
-          oauth_token: 							'6zEfT7oyziwzAYCs8mPskGUnCjEI4-Fp', //Token
+          oauth_token: 							'vUKFulWbm-pTggwflZaVg84u5YyNF_-i', //Token
           oauth_signature_method: 	'HMAC-SHA1',
           oauth_timestamp: 					new Date().getTime(),
           oauth_nonce: 							randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
@@ -39,7 +39,7 @@ angular.module('butterflyappApp')
           term:                      term || '',
         }; // end params
         var consumerSecret = 				'6JyakyLKMF-cwZrJi3z4JrbACpY'; //Consumer Secret
-        var tokenSecret = 					'Ipr_APAvZlMKR_VEMMDJPUk5hgk'; //Token Secret
+        var tokenSecret = 					'ctJxIlpYuLTjASTZnfX7cMO3THc'; //Token Secret
         var signature =
           oauthSignature.generate(
             method,
