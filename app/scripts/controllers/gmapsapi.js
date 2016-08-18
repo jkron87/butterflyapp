@@ -16,8 +16,8 @@ angular.module('butterflyappApp')
         $scope.position = position;
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        var latToCheck = latitude.toFixed(0);
-        var longToCheck = longitude.toFixed(0);
+        var latToCheck = latitude.toFixed(3);
+        var longToCheck = longitude.toFixed(3);
         CheckGeo.checkerGmap(latToCheck, longToCheck);
 
     }, function (reason) {
