@@ -7439,17 +7439,16 @@ h2.title {
 
 #accordion {
   margin: auto;
-  width: 55%;
+  width: 76%;
+}
+
+path {
+  width: 16px;
 }
 
 .accordion-toggle {
   cursor: pointer;
   font-size: 21px;
-}
-
-.accordion-content {
-  display: none;
-  text-align: left;
 }
 
 .accordion-content p {
@@ -7670,4 +7669,13 @@ body {
 
 .navbar-header {
   float: center;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content p {
+  text-align: left;
+  padding-left: 40px;
 }
