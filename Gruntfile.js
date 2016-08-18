@@ -138,6 +138,8 @@ module.exports = function (grunt) {
       }
     },
 
+
+
     // Make sure code styles are up to par
     jscs: {
       options: {
@@ -224,7 +226,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -381,6 +383,23 @@ module.exports = function (grunt) {
       }
     },
 
+    sass: {                                   // Task
+  dist: {                                 // Target
+      files: {                            // Dictionary of files
+          'styles/main.css': 'styles/main.scss',
+          'widgets.css': 'widgets.scss'       // 'destination': 'source'
+      }
+  },
+  dev: {                                  // Another target
+      options: {                          // Target options
+          style: 'expanded'
+      },
+      files: {
+          'main.css': 'main.scss',
+      }
+  }
+},
+
     // ng-annotate tries to make the code safe for minification automatically
     // by using the Angular long form for dependency injection.
     ngAnnotate: {
@@ -474,6 +493,9 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.registerTask('default', ['sass']);
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
